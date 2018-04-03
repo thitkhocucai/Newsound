@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <signal.h>
 #include "sound.h"
 
 int main (void)
 {
+	int rat;
 	while(1)
 	{
-		system("arecord -q -r16000 -c1 s16_LE -d1 test.wav");
+		rat = system("arecord -q -r16000 -c1 s16_LE -d1 test.wav");
+		if(
 		//RECORD 1 second if sound into test.wav
 		//open the wav file and read samples
 		displayWAVheader("test.wav");
